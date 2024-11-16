@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+.signup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height: 60%;
+    /* background-color: lightgoldenrodyellow; */
+    background-color: #f9fafb;
+    border: 0.1rem solid black;
+    box-shadow: .2rem 0.2rem 1rem .2rem black;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    gap: 0.5rem;
+}
+
+.signup-login-input{
+    border: none !important;
+    outline: none !important;
+    border-bottom: .05rem solid black !important;
+    height: 1.5rem;
+    width: 70% !important;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.1rem;
+}
+label{
+    text-align: left;
+}
+
+.signup-btn{
+    width: 70%;
+    height: 1.5rem;
+    background-color: #f9fafb;
+    color: black;
+    cursor: pointer;
+    transition: .3s all ease;
+    &:hover{
+        background-color: green;
+        color: whitesmoke;
+        /* color: black; */
+    }
+}
+
+p{
+    color: black;
+}
+a{
+    text-decoration: none;
+}

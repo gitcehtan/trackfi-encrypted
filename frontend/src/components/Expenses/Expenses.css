@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* body{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    background-color: whitesmoke;
+} */
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 4rem;
+    width: 100%;
+    height: 100%;
+    gap: 1vw;
+}
+
+#expenseInput #expenseForm{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 4vh;
+    width: 70vw;
+    height: 50vh;
+    background-color: rgb(238, 232, 232);
+    padding: 4vh;
+    box-shadow: none;
+    border: none;
+}
+
+input[type=text], input[type=number], select, button {
+    
+    width: 90%;
+    height: 4vh;
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    border: 1px solid #9b9696;
+    padding-left: 1vw;
+    outline: none;
+    accent-color: whitesmoke;
+    color: gray;
+    
+}
+
+button{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: gray;
+    margin: 1vh 0;
+}
+
+button:hover{
+    background-color: rgb(246, 239, 239);
+}
+
+#showExpenseData{
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    height: 100%;
+    padding: 4vh;
+    gap: 4vh;
+    background-color: rgb(238, 232, 232);
+}
+
+.chart-container{
+    width: 30vw;
+    height: 30vw;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+/* The Modal (background) */
+
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  

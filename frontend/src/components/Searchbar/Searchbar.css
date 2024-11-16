@@ -1,0 +1,22 @@
+.searchbar{
+    width: 70vw;
+    background-color: whitesmoke;
+    padding: 2vh 4vh;
+}
+
+#searchForm{
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    border: none;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+   -webkit-appearance: none;
+}

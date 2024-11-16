@@ -1,0 +1,49 @@
+.pagination{
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ width: 80%;
+ height: 2rem;
+ 
+ padding: 1rem;
+ /* border: 1px solid red; */
+}
+.pageBtns {
+    height: 100%;
+    width: 100%;
+    margin-top: -1.5rem;
+    margin-left: 0rem;
+}
+.pageBtn{
+    height: 0rem;
+    width: 0rem;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    padding: 0rem 1rem;
+    background-color: transparent;
+    &:hover{
+        color: red;
+    }
+}
+
+.prevBtn, .nextBtn{
+    width: 12rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &:hover{
+        color: red;
+        background-color: transparent;
+    }
+}

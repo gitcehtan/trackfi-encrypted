@@ -1,0 +1,203 @@
+footer{
+    background-color: #f9fafb; /* Light gray background */
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0 !important;
+}
+.footerContainer {
+    background-color: #f9fafb; /* Light gray background */
+    padding: 1px 0;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footerContent {
+    max-width: 1120px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.footerLogo {
+    width: auto;
+    height: 36px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 20px;
+    word-wrap: break-word;
+    width: 20rem;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.2rem;
+    background-color: gray;
+    color: white ;
+    border-radius: 50%;
+    transition: background-color 0.4s ease;
+}
+.socialLink:nth-child(1){
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0.3rem;
+}
+.socialLink:hover:nth-child(1) {
+    background-color:  white; /* Blue hover */
+    color: black ;
+}
+.socialLink:hover:nth-child(2) {
+    background-color: #2563eb; /* Blue hover */
+}
+.socialLink:hover:nth-child(3) {
+    background-color: pink;
+    background-image: linear-gradient(to right, #f9ce34,  #ee2a7b and  #6228d7) !important; /* Blue hover */
+}
+.socialLink:hover:nth-child(4) {
+    background-color: black; /* Blue hover */
+}
+
+.sectionHeading {
+    color: #9ca3af;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: -10px;
+}
+
+.linkList {
+    list-style: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.linkItem a {
+    color: #111827;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.linkItem a:hover {
+    color: #2563eb;
+}
+
+.contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.subscribeForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.subscribeInput:nth-child(1){
+    padding: .5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 5rem;
+    resize: vertical;
+    max-height: 20rem;
+    max-width: 300px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.subscribeInput:nth-child(2) {
+    padding: .5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.subscribeInput:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+.subscribeButton {
+    padding: 1.2rem 1.8rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribeButton:hover {
+    background-color: #1e40af;
+}
+
+.footerBottomText {
+    color: #4b5563;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.footerSeparator {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 5px 0;
+}
+
