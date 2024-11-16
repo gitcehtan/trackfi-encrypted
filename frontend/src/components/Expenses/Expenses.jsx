@@ -243,7 +243,7 @@ const checkToken = (token)=>{
         </form>
     
     </div>
-
+   
     {/* Search Bar Component Start */}
     <Searchbar expenses={expenses} setDisplayExpenses={setDisplayExpenses} />
 
