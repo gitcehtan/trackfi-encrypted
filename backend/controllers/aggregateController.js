@@ -1,4 +1,4 @@
-
+const axios = require("axios")
 const ExpenseModel = require("../models//Expense.js");
 const mongoose = require("mongoose");
 
@@ -12,6 +12,12 @@ const groupSum = async (req,res) =>{
         { $match: { userId: _userid } },// Match documents with the specific user ID
         { $group: { _id: "$category", count: { $sum: "$amount" } } } // Group by category and sum the amounts
     ])
+
+    // const expense = await axios.get("http://localhost:3000/expenses/decrypted");
+ 
+
+    // console.log("aggregateController "+JSON.stringify(expense));
+    
 
     res.status(201)
        .json(result);

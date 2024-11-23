@@ -1,14 +1,18 @@
 const UserModel = require("../models/User.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const crypto = require("crypto");
+
 require("dotenv").config();
+
+let token;
 
 const signup = async (req,res) => {
     try {
-        const {name, email, password} = req.body;
+        const {name, email, password, secretKey} = req.body;
         
         const user = await UserModel.findOne({email: email});
-
+         
         if(user){
             return res.status(409)
                       .json({
@@ -17,9 +21,11 @@ const signup = async (req,res) => {
                       })
         }
 
-        const userModel = new UserModel({name, email, password});
-
+        const salt = crypto.randomBytes(16);
+        const userModel = new UserModel({name, email, password,secretKey,salt});
+        
         userModel.password = await bcrypt.hash(password, 10);
+        userModel.secretKey = await bcrypt.hash(secretKey, 10);
 
         await userModel.save();
 
@@ -70,7 +76,7 @@ const login = async (req,res) => {
             );
         
         
-
+            token = jwtToken;
         res.status(200)
            .json({
             message: "Logged In Successfully",
@@ -94,6 +100,7 @@ const login = async (req,res) => {
 
 module.exports = {
     login, 
-    signup
+    signup,
+    token
 };
 

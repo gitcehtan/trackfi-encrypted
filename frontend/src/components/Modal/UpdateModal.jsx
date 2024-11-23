@@ -128,7 +128,7 @@ const UpdateModal = ({open, onClose,expense, fetchExpenses}) => {
             <button onClick={updateExpense} className="update-submit">Update</button>
         </form>
         </div>
-         <ToastContainer/>       
+         {/* <ToastContainer/>        */}
         </div>)
        }
     </>

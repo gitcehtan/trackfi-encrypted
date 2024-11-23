@@ -7,7 +7,7 @@ import {ToastContainer } from 'react-toastify';
 
 const Signup = () => {
 
-  const [signupInfo, setSignupInfo] = useState({name:'', email: '', password: ''});
+  const [signupInfo, setSignupInfo] = useState({name:'', email: '', password: '',secretKey: ''});
   
   const navigate = useNavigate();
 
@@ -22,10 +22,10 @@ const Signup = () => {
   const handleSignup = async(e) => {
     e.preventDefault();
     
-    const {name, email, password} = signupInfo;
+    const {name, email, password,secretKey} = signupInfo;
 
-    if(! name || !email || !password){
-        return handleError("Name , Email and Password are compulsory ");
+    if(! name || !email || !password || !secretKey){
+        return handleError("Name , Email, Password and Secret Key are compulsory ");
     }
     
     try {
@@ -94,10 +94,17 @@ const Signup = () => {
                 value={signupInfo.password}
         />
 
+        <label htmlFor="secretKey">Secret Key</label>
+        <input className='signup-login-input' onChange={handleChange} type="password" name='secretKey' 
+            autoFocus
+                placeholder='Enter your Secret Key'
+                value={signupInfo.secretKey}
+        />
+
         <button className='signup-btn'>SignUp</button>
         <p>If Already Registered. Login here <Link to={'/login'}>Login</Link></p>
       </form>
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
     </div>
     </>
   )

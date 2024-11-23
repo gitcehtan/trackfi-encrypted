@@ -8,13 +8,14 @@ import UpdateExpense  from '../Modal/UpdateModal.jsx';
 import PieChart from '../Charts/PieChart.jsx';
 import Searchbar from '../Searchbar/Searchbar.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
+import SecretKey from '../SecretKey/SecretKey.jsx';
 
 export const currPageContext = createContext();
 const Expenses = () => {
 
 
   
-const [loggedInUser, setLoggedInUser] = useState('');
+// const [loggedInUser, setLoggedInUser] = useState('');
 const [expenses, setExpenses] = useState(); // to get expenses
 const [displayExpenses, setDisplayExpenses] = useState(); // to display expenses in the UI
 
@@ -37,7 +38,7 @@ const closeModal = () => setModalOpen(false);
 const navigate = useNavigate();
 
 useEffect(() => {
-    setLoggedInUser(localStorage.getItem('loggedInUser'));
+    // setLoggedInUser(localStorage.getItem('loggedInUser'));
     fetchExpenses();
     checkToken(token);
     console.log("Useeffect");
@@ -49,7 +50,7 @@ useEffect(() => {
 
 const fetchExpenses = async () => {
     try {
-    const url  = "http://localhost:3000/expenses";
+    const url  = "http://localhost:3000/expenses/decrypted";
     const headers = {
         headers: {
         "Authorization" : token,
@@ -62,12 +63,13 @@ const fetchExpenses = async () => {
         
         setExpenses(result);
         setDisplayExpenses(result.slice(indexOfFirstItem,indexOfLastItem));
+        console.log("expenses fetched "+ JSON.stringify(result));
         // console.log("Expenses "+result);
     
     } catch (error) {
-        console.log("errrir",error);
+        console.log("errror",error);
         
-    handleError(error);
+        handleError(error);
     }
 }
 
@@ -140,6 +142,7 @@ const currUser = localStorage.getItem('loggedInUser');
 
 const handleDelete = async(expenseId) => {
     // console.log(e);
+
     
     try {
     const url = "http://localhost:3000/expenses/delete";
@@ -201,12 +204,13 @@ const checkToken = (token)=>{
   return (
     <currPageContext.Provider value={{currPage, setCurrPage}}>
     <>
-    
-    {token && (<>
 
-        <h1>{loggedInUser}</h1>    
+    {token && (<>
+   
+        {/* <h1>{loggedInUser}</h1>     */}
     <div id="container">
         
+     <SecretKey />
     <div id="expenseInput">
         <form id="expenseForm">
        
@@ -278,7 +282,7 @@ const checkToken = (token)=>{
     </div>
     <Pagination totalPages={totalPages} fetchExpenses={fetchExpenses}/>
     <h1>{currPage}</h1>
-    <ToastContainer/>
+    {/* <ToastContainer/> */}
     </div>
     <UpdateExpense open={isModalOpen} onClose={closeModal} expense={expense} fetchExpenses={fetchExpenses} />
     </>)}  

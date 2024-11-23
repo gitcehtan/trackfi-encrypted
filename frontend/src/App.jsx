@@ -8,7 +8,7 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import About from './components/About/About';
 import Expenses from './components/Expenses/Expenses';
-
+import { ToastContainer } from 'react-toastify';
 function App() {
   
 
@@ -24,6 +24,7 @@ function App() {
           <Route path='/about' element={<About/>}/>
         </Routes>
         <Footer/>
+        <ToastContainer/>
      </BrowserRouter>
    </>
   )

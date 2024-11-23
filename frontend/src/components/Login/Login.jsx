@@ -104,7 +104,7 @@ const Login = () => {
         <button className='signup-btn'>Log In</button>
         <p>Not Registered Yet. Sign Up here <Link to={'/signup'}>Sign Up</Link></p>
       </form>
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
     </div>
     </>
   )

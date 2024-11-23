@@ -10,14 +10,32 @@ const Navbar = () => {
   let loggedInUser = localStorage.getItem('loggedInUser');
   let token = localStorage.getItem('token');
 
-  const handleLogout = (e) => {
+  const handleLogout = async(e) => {
+
+    const response = await fetch('http://localhost:3000/expenses/logout', {
+      method: 'POST',
+      headers: {
+          Authorization: localStorage.getItem('token'), // Replace with your auth token logic
+          'Content-Type': 'application/json',
+      },
+    });
+
+  const result = await response.json();
+
+  if (result.success) {
     localStorage.removeItem('token');
     localStorage.removeItem('loggedInUser');
     localStorage.removeItem('userId');
-    handleSuccess("User Logged Out")
+    sessionStorage.removeItem("myKey");
+    handleSuccess(result.message)
     setTimeout(() => {
         navigate('/login');
     },1000);
+    
+} else {
+    console.error('Logout failed:', result.message);
+}
+
 }
 
   return (
