@@ -253,7 +253,7 @@ const checkToken = (token)=>{
 
     <div id="showExpenseData">
              <div className='chart-container'>
-                <PieChart length={expenses?.length}/>
+                {/* <PieChart length={expenses?.length}/> */}
              </div>
 
             <table id= "expenseTable">

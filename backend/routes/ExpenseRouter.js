@@ -59,7 +59,7 @@ router.post('/logout', ensureAuthenticated, (req, res) => {
     globalSecretKey =  null; // Reset the globalSecretKey
     // req.logout(); // Optional: If using Passport.js for authentication
     res.status(200).json({
-        message: "Logged out successfully. Secret Key has been reset.",
+        message: "Logged out successfully.",
         success: true,
     });
 });
